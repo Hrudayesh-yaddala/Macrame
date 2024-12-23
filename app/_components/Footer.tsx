@@ -26,9 +26,9 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-xl font-semibold mb-4">Contact Us</h4>
-            <p>123 Macrame Lane</p>
-            <p>Craftsville, CR 12345</p>
-            <p>Phone: (555) 123-4567</p>
+            <p>G.P Road, Mangalagiri, Guntur - 522503</p>
+            <p> (Opp.New India Hotel)</p>
+            <p>Phone: +91 8967564357</p>
             <p>Email: info@heavenlymoonmacrame.com</p>
           </div>
           <div>

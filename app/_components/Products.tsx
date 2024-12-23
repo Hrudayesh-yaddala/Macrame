@@ -4,15 +4,27 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const products = [
-  { name: "Wall Decor", image: "/images/wallhang.jpg", price: "$15" },
-  { name: "Macrame Bag", image: "/images/handbag1.jpg", price: "$45" },
-  { name: "Wall Decor", image: "/images/wallhang2.jpg", price: "$65" },
-  { name: "Macrame Jewelry", image: "/images/wallhang4.jpg", price: "$25" },
-  { name: "Custom Keychain", image: "/images/keychain.jpg", price: "$15" },
-  { name: "Macrame Bag", image: "/images/handbag3.webp", price: "$45" },
-  { name: "Wall Decor", image: "/images/wallhang3.jpg", price: "$65" },
-  { name: "Macrame Jewelry", image: "/images/band.jpg", price: "$25" },
-  { name: "Wall Decor", image: "/images/wallhang5.jpg", price: "$25" },
+  { name: "Wall Decor", image: "/images/wallhang.jpg", price: "Rs. 549" },
+  { name: "Macrame Bag", image: "/images/handbag1.jpg", price: "Rs. 699" },
+  { name: "Wall Decor", image: "/images/wallhang2.jpg", price: "Rs. 849" },
+  {
+    name: "Macrame Jewelry",
+    image: "/images/wallhang4.jpg",
+    price: "Rs. 999 ",
+  },
+  { name: "Custom Keychain", image: "/images/keychain.jpg", price: "Rs. 449" },
+  { name: "Macrame Bag", image: "/images/handbag3.webp", price: "Rs. 349" },
+  { name: "Wall Decor", image: "/images/wallhang3.jpg", price: "Rs. 549" },
+  { name: "Macrame Jewelry", image: "/images/band.jpg", price: "Rs. 999" },
+  { name: "Wall Decor", image: "/images/wallhang5.jpg", price: "Rs. 749" },
+  { name: "Wall Decor", image: "/images/wallhang.jpg", price: "Rs. 549" },
+  { name: "Wall Decor", image: "/images/wallhang2.jpg", price: "Rs. 849" },
+  { name: "Macrame Jewelry", image: "/images/band.jpg", price: "Rs. 999" },
+  {
+    name: "Macrame Jewelry",
+    image: "/images/wallhang4.jpg",
+    price: "Rs. 999 ",
+  },
 ];
 
 export default function Products() {

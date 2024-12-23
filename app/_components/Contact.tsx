@@ -6,6 +6,37 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin } from "lucide-react";
 
+const handleSubmit = async (e: any) => {
+  e.preventDefault();
+
+  const formData = {
+    name: e.target.name.value,
+    email: e.target.email.value,
+    message: e.target.message.value,
+  };
+
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to submit contact form");
+    }
+
+    const result = await response.json();
+    alert(result.message);
+    e.target.reset();
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    alert("Failed to send message.");
+  }
+};
+
 export default function Contact() {
   return (
     <section className="py-16 ">
@@ -15,8 +46,8 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <h2 className="text-5xl font-bold text-center mb-12">Contact Us</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mx-5">
             <div>
               <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
               <p className="mb-6">
@@ -31,16 +62,18 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center">
                   <Phone className="mr-3 text-gray-600" />
-                  <span>(555) 123-4567</span>
+                  <span>+91 8967564357</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="mr-3 text-gray-600" />
-                  <span>123 Macrame Lane, Craftsville, CR 12345</span>
+                  <span>
+                    G.P Road, Mangalagiri, Guntur - 522503 (Opp.New India Hotel)
+                  </span>
                 </div>
               </div>
             </div>
             <div>
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <label
                     htmlFor="name"
@@ -72,7 +105,10 @@ export default function Contact() {
                     className="min-h-[150px]"
                   />
                 </div>
-                <Button type="submit" className="w-full">
+                <Button
+                  type="submit"
+                  className="w-full bg-gray-300 hover:bg-gray-400"
+                >
                   Send Message
                 </Button>
               </form>
