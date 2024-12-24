@@ -6,13 +6,21 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin } from "lucide-react";
 
-const handleSubmit = async (e: any) => {
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+const handleSubmit = async (
+  e: React.FormEvent<HTMLFormElement>
+): Promise<void> => {
   e.preventDefault();
 
-  const formData = {
-    name: e.target.name.value,
-    email: e.target.email.value,
-    message: e.target.message.value,
+  const formData: FormData = {
+    name: (document.getElementById("name") as HTMLInputElement).value,
+    email: (document.getElementById("email") as HTMLInputElement).value,
+    message: (document.getElementById("message") as HTMLTextAreaElement).value,
   };
 
   try {
@@ -30,7 +38,7 @@ const handleSubmit = async (e: any) => {
 
     const result = await response.json();
     alert(result.message);
-    e.target.reset();
+    (e.target as HTMLFormElement).reset();
   } catch (error) {
     console.error("Error submitting form:", error);
     alert("Failed to send message.");
