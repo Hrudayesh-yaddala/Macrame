@@ -50,8 +50,12 @@ export default function FAQ() {
           >
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger>{faq.question}</AccordionTrigger>
-                <AccordionContent>{faq.answer}</AccordionContent>
+                <AccordionTrigger className=" text-xl">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className=" text-base">
+                  {faq.answer}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
