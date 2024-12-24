@@ -51,9 +51,9 @@ export default function Contact() {
             <div>
               <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
               <p className="mb-6">
-                We'd love to hear from you! Whether you have a question about
-                our products, custom orders, or anything else, our team is ready
-                to answer all your questions.
+                We&apos;d love to hear from you! Whether you have a question
+                about our products, custom orders, or anything else, our team is
+                ready to answer all your questions.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
